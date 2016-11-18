@@ -36,6 +36,8 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtOld = new System.Windows.Forms.ToolStripTextBox();
+            this.txtNew = new System.Windows.Forms.ToolStripTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +78,9 @@
             // 
             // editToolStripMenuItem
             // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.txtOld,
+            this.txtNew});
             this.editToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(75, 41);
@@ -101,6 +106,18 @@
             this.openFileDialog1.DefaultExt = "rtf";
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "RTF Files|*.rtf|All files|*.*";
+            // 
+            // txtOld
+            // 
+            this.txtOld.Name = "txtOld";
+            this.txtOld.Size = new System.Drawing.Size(100, 23);
+            this.txtOld.DoubleClick += new System.EventHandler(this.txtOld_DoubleClick);
+            // 
+            // txtNew
+            // 
+            this.txtNew.Name = "txtNew";
+            this.txtNew.Size = new System.Drawing.Size(100, 23);
+            this.txtNew.DoubleClick += new System.EventHandler(this.txtNew_DoubleClick);
             // 
             // Form1
             // 
@@ -129,6 +146,8 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox txtOld;
+        private System.Windows.Forms.ToolStripTextBox txtNew;
     }
 }
 
