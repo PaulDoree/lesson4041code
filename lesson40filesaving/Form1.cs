@@ -64,5 +64,25 @@ namespace lesson40filesaving
                 richTextBox1.Text = richTextBox1.Text.Replace(txtOld.Text, txtNew.Text);
             }
         }
+
+        private void fontToolStripMenuItem_Click(object sender, EventArgs e) //runs when choosing a new font
+        {
+            fontDialog1.ShowDialog();//show a box so a new font can be chosen
+            richTextBox1.Font = fontDialog1.Font;//set rich text box font to the one chosen
+
+        }
+
+        private void printPreviewPrintToolStripMenuItem_Click(object sender, EventArgs e)//runs when previewing
+        {
+            printPreviewDialog1.Document = printDocument1;//choose document to be displayed in the preview panel
+            printPreviewDialog1.ShowDialog();//bring up a little window to actually show a preview
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            //code runs when a page is about to be previewed or a page is about to be printed
+            //in the video you saw StringFormat.GenericTypographic as the last argument, you can also remove it
+            e.Graphics.DrawString(richTextBox1.Text, richTextBox1.Font, Brushes.Black,e.MarginBounds);
+        }
     }
 }

@@ -28,16 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtOld = new System.Windows.Forms.ToolStripTextBox();
+            this.txtNew = new System.Windows.Forms.ToolStripTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.txtOld = new System.Windows.Forms.ToolStripTextBox();
-            this.txtNew = new System.Windows.Forms.ToolStripTextBox();
+            this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.printPreviewPrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +62,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem,
-            this.openToolStripMenuItem});
+            this.openToolStripMenuItem,
+            this.printPreviewPrintToolStripMenuItem});
             this.fileToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(70, 41);
@@ -80,11 +87,24 @@
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.txtOld,
-            this.txtNew});
+            this.txtNew,
+            this.fontToolStripMenuItem});
             this.editToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(75, 41);
             this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // txtOld
+            // 
+            this.txtOld.Name = "txtOld";
+            this.txtOld.Size = new System.Drawing.Size(100, 23);
+            this.txtOld.DoubleClick += new System.EventHandler(this.txtOld_DoubleClick);
+            // 
+            // txtNew
+            // 
+            this.txtNew.Name = "txtNew";
+            this.txtNew.Size = new System.Drawing.Size(100, 23);
+            this.txtNew.DoubleClick += new System.EventHandler(this.txtNew_DoubleClick);
             // 
             // richTextBox1
             // 
@@ -107,17 +127,33 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "RTF Files|*.rtf|All files|*.*";
             // 
-            // txtOld
+            // fontToolStripMenuItem
             // 
-            this.txtOld.Name = "txtOld";
-            this.txtOld.Size = new System.Drawing.Size(100, 23);
-            this.txtOld.DoubleClick += new System.EventHandler(this.txtOld_DoubleClick);
+            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(160, 42);
+            this.fontToolStripMenuItem.Text = "Font";
+            this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
             // 
-            // txtNew
+            // printPreviewPrintToolStripMenuItem
             // 
-            this.txtNew.Name = "txtNew";
-            this.txtNew.Size = new System.Drawing.Size(100, 23);
-            this.txtNew.DoubleClick += new System.EventHandler(this.txtNew_DoubleClick);
+            this.printPreviewPrintToolStripMenuItem.Name = "printPreviewPrintToolStripMenuItem";
+            this.printPreviewPrintToolStripMenuItem.Size = new System.Drawing.Size(314, 42);
+            this.printPreviewPrintToolStripMenuItem.Text = "Print Preview/Print";
+            this.printPreviewPrintToolStripMenuItem.Click += new System.EventHandler(this.printPreviewPrintToolStripMenuItem_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // Form1
             // 
@@ -148,6 +184,11 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox txtOld;
         private System.Windows.Forms.ToolStripTextBox txtNew;
+        private System.Windows.Forms.ToolStripMenuItem fontToolStripMenuItem;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.ToolStripMenuItem printPreviewPrintToolStripMenuItem;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
 
