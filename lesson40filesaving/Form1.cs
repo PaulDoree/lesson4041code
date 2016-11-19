@@ -80,8 +80,11 @@ namespace lesson40filesaving
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+
             //code runs when a page is about to be previewed or a page is about to be printed
             //in the video you saw StringFormat.GenericTypographic as the last argument, you can also remove it
+            //Note: this code is very basic. It has to be improved in order to print pages of text when the text
+            //is very long inside the richtextbox. 
             e.Graphics.DrawString(richTextBox1.Text, richTextBox1.Font, Brushes.Black, e.MarginBounds);
         }
 
