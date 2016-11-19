@@ -33,17 +33,19 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printPreviewPrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtOld = new System.Windows.Forms.ToolStripTextBox();
             this.txtNew = new System.Windows.Forms.ToolStripTextBox();
+            this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.printPreviewPrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +65,8 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem,
             this.openToolStripMenuItem,
-            this.printPreviewPrintToolStripMenuItem});
+            this.printPreviewPrintToolStripMenuItem,
+            this.printToolStripMenuItem});
             this.fileToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(70, 41);
@@ -72,16 +75,23 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(159, 42);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(314, 42);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(159, 42);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(314, 42);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // printPreviewPrintToolStripMenuItem
+            // 
+            this.printPreviewPrintToolStripMenuItem.Name = "printPreviewPrintToolStripMenuItem";
+            this.printPreviewPrintToolStripMenuItem.Size = new System.Drawing.Size(314, 42);
+            this.printPreviewPrintToolStripMenuItem.Text = "Print Preview/Print";
+            this.printPreviewPrintToolStripMenuItem.Click += new System.EventHandler(this.printPreviewPrintToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -106,6 +116,13 @@
             this.txtNew.Size = new System.Drawing.Size(100, 23);
             this.txtNew.DoubleClick += new System.EventHandler(this.txtNew_DoubleClick);
             // 
+            // fontToolStripMenuItem
+            // 
+            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(160, 42);
+            this.fontToolStripMenuItem.Text = "Font";
+            this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
+            // 
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -127,20 +144,6 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "RTF Files|*.rtf|All files|*.*";
             // 
-            // fontToolStripMenuItem
-            // 
-            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            this.fontToolStripMenuItem.Size = new System.Drawing.Size(160, 42);
-            this.fontToolStripMenuItem.Text = "Font";
-            this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
-            // 
-            // printPreviewPrintToolStripMenuItem
-            // 
-            this.printPreviewPrintToolStripMenuItem.Name = "printPreviewPrintToolStripMenuItem";
-            this.printPreviewPrintToolStripMenuItem.Size = new System.Drawing.Size(314, 42);
-            this.printPreviewPrintToolStripMenuItem.Text = "Print Preview/Print";
-            this.printPreviewPrintToolStripMenuItem.Click += new System.EventHandler(this.printPreviewPrintToolStripMenuItem_Click);
-            // 
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
@@ -154,6 +157,21 @@
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(314, 42);
+            this.printToolStripMenuItem.Text = "Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.AllowSelection = true;
+            this.printDialog1.AllowSomePages = true;
+            this.printDialog1.Document = this.printDocument1;
+            this.printDialog1.ShowHelp = true;
+            this.printDialog1.UseEXDialog = true;
             // 
             // Form1
             // 
@@ -189,6 +207,8 @@
         private System.Windows.Forms.ToolStripMenuItem printPreviewPrintToolStripMenuItem;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }
 
